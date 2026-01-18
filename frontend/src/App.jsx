@@ -11,12 +11,12 @@ function App() {
   // --- NEW CONTROLS STATE ---
   const [daysAhead, setDaysAhead] = useState(30); // Default 1 Month
   const [showLastYear, setShowLastYear] = useState(false); // Toggle off by default
-
+  const API_URL = "https://shipper-brain.onrender.com";
   const fetchPrediction = async () => {
     setLoading(true);
     try {
       // We pass the 'daysAhead' state to the API
-      const response = await axios.get(`http://127.0.0.1:8000/predict/${route}?days_ahead=${daysAhead}`);
+      const response = await axios.get(`API_URL/predict/${route}?days_ahead=${daysAhead}`);
       setData(response.data.forecast);
     } catch (error) {
       console.error("Error:", error);
