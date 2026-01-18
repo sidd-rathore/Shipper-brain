@@ -16,7 +16,7 @@ function App() {
     setLoading(true);
     try {
       // We pass the 'daysAhead' state to the API
-      const response = await axios.get(`API_URL/predict/${route}?days_ahead=${daysAhead}`);
+      const response = await axios.get(`${API_URL}/predict/${route}?days_ahead=${daysAhead}`);
       setData(response.data.forecast);
     } catch (error) {
       console.error("Error:", error);
